@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Magnific popup</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="magnific-popup.css">
+
+    <!-- следующие 3 строки нужны для корректного отображения семантических элементов HTML5 в старых версиях Internet Explorer-->
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <style>
+        /* overlay at start */
+        .mfp-fade.mfp-bg {
+          opacity: 0;
+
+          -webkit-transition: all 0.15s ease-out;
+          -moz-transition: all 0.15s ease-out;
+          transition: all 0.15s ease-out;
+        }
+        /* overlay animate in */
+        .mfp-fade.mfp-bg.mfp-ready {
+          opacity: 0.8;
+        }
+        /* overlay animate out */
+        .mfp-fade.mfp-bg.mfp-removing {
+          opacity: 0;
+        }
+
+        /* content at start */
+        .mfp-fade.mfp-wrap .mfp-content {
+          opacity: 0;
+
+          -webkit-transition: all 0.15s ease-out;
+          -moz-transition: all 0.15s ease-out;
+          transition: all 0.15s ease-out;
+        }
+        /* content animate it */
+        .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+          opacity: 1;
+        }
+        /* content animate out */
+        .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+          opacity: 0;
+        }
+        .white-popup {
+          position: relative;
+          background: #FFF;
+          padding: 20px;
+          width: auto;
+          max-width: 500px;
+          margin: 20px auto;
+        }
+        
+/*        .mfp-s-loading { color: blue; }
+
+        .mfp-s-ready { color: green; }
+
+        .mfp-s-error { color: red; }*/
+
+    </style>
+
+    <a href="#test-popup" class="open-popup-link">Open popup</a>
+
+
+
+
+
+    <div id="test-popup" class="white-popup mfp-hide">
+        <h4>Popup</h4>
+        <p>Popup content</p>
+    </div>
+
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous">
+    </script>
+    <script src="jquery.magnific-popup.min.js"></script>
+    <script>
+      jQuery(document).ready(function(){
+          $('.open-popup-link').magnificPopup({
+              type: 'inline',
+              removalDelay: 300,
+              preloader: true,
+              midClick: true,
+
+              mainClass: 'mfp-fade'
+          });
+      });
+    </script>
+  </body>
+</html>
